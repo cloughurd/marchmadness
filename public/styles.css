@@ -1,62 +1,96 @@
 body {
     font-family: 'Arvo';
-    font-size: 16px;
-    padding: 20px 100px 0px 100px;
+    font-size: 12px;
+    padding: 20px;
     background: #f3f3f3;
 }
-
-/* List */
-
+h1{
+  text-align: center;
+  font-size: 1.5em;
+}
+h2{
+  margin: 10px;
+  font-size: 1.2em;
+  text-align: center;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+.region{
+  flex: 1;
+  align-items: center;
+  margin: 10px;
+}
 ul {
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 li {
     background: #fff;
-    width: 500px;
+    width: 90%;
     min-height: 30px;
     padding: 10px;
-    margin-bottom: 10px;
+    margin: 10px;
     font-size: 1em;
     display: flex;
     align-items: center;
-}
-
-.delete {
-    display: none;
-    margin-left: auto;
-}
-
-li:hover .delete {
-    display: block;
+    min-height: 70px;
 }
 
 label {
     width: 400px;
 }
 
-.completed {
-    text-decoration: line-through;
-}
-
-/* Form */
-
-input[type=checkbox] {
-    transform: scale(1.5);
-    margin-right: 10px;
-}
-
-input[type=text] {
-    font-size: 1em;
-}
 
 button {
-    font-family: 'Arvo';
-    font-size: 1em;
+  width: 90%;
+  font-family: 'Arvo';
+  font-size: 1em;
+  margin: 10px;
+  color: white;
+  background-color: #6495ED;
+  border-style: none;
 }
+button:hover{
+  background-color: #00FFFF;
+  color: black;
+}
+ @media(min-width: 900px){
+  .container{
+    flex-direction: row;
+  }
+  body{
+    font-size: 16px;
+  }
+  h1{
+    font-size: 2em;
+  }
+  h2{
+    font-size: 1.5em;
+  }
+ }
 
-/* Controls */
-
-.controls {
-    margin-top: 20px;
+footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  opacity: 0.8;
+  margin-bottom: 10px;
+  width: 100%;
+  text-align: center;
+  background-color: #F5F5DC;
+}
+footer a{
+  text-decoration: none;
+  color: blue;
+}
+footer a:visited{
+  color: blue;
 }

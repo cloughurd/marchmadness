@@ -43,7 +43,7 @@ var app = new Vue({
       axios.get("/api/south").then(response => {
         this.south = response.data.region;
         this.southVotes = response.data.voteCount;
-        console.log(this.south);
+        // console.log(this.south);
         return true;
       }).catch(err => {
       });
@@ -52,7 +52,7 @@ var app = new Vue({
       axios.get("/api/east").then(response => {
         this.east = response.data.region;
         this.eastVotes = response.data.voteCount;
-        console.log(this.east);
+        // console.log(this.east);
         return true;
       }).catch(err => {
       });
@@ -61,7 +61,7 @@ var app = new Vue({
       axios.get("/api/west").then(response => {
         this.west = response.data.region;
         this.westVotes = response.data.voteCount;
-        console.log(this.west);
+        // console.log(this.west);
         return true;
       }).catch(err => {
       });
@@ -70,7 +70,7 @@ var app = new Vue({
       axios.get("/api/midwest").then(response => {
         this.midwest = response.data.region;
         this.midwestVotes = response.data.voteCount;
-        console.log(this.midwest);
+        // console.log(this.midwest);
         return true;
       }).catch(err => {
       });
@@ -111,7 +111,7 @@ var app = new Vue({
       if(total < 0){
         return "0";
       }else{
-        let percent = (school / total * 100).toFixed(2);
+        let percent = (school / total * 100).toFixed(0);
         return percent;
       }
     }
