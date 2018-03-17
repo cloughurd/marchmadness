@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css"/>
+    <title>Vue Todo</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>Vote for your favorite team in each region!</h1>
+      <h2><input type="checkbox" v-model="showSouth">South</h2>
+      <ul v-show="showSouth">
+        <li v-for="college in south">
+          <button v-on:click="voteForSouth(college)">{{ college.school }}</button><p v-show="southVotes > 0">{{ formatPercentage(college.votes, southVotes) }}% of {{ southVotes }} total votes</p>
+        </li>
+      </ul>
+      <h2><input type="checkbox" v-model="showEast">East</h2>
+      <ul v-show="showEast">
+        <li v-for="college in east">
+          <button v-on:click="voteForEast(college)">{{ college.school }}</button><p v-show="eastVotes > 0">{{ formatPercentage(college.votes, eastVotes) }}% of {{ eastVotes }} total votes</p>
+        </li>
+      </ul>
+      <h2><input type="checkbox" v-model="showWest">West</h2>
+      <ul v-show="showWest">
+        <li v-for="college in west">
+          <button v-on:click="voteForWest(college)">{{ college.school }}</button><p v-show="westVotes > 0">{{ formatPercentage(college.votes, westVotes) }}% of {{ westVotes }} total votes</p>
+        </li>
+      </ul>
+      <h2><input type="checkbox" v-model="showMidwest">Midwest</h2>
+      <ul v-show="showMidwest">
+        <li v-for="college in midwest">
+          <button v-on:click="voteForMidwest(college)">{{ college.school }}</button><p v-show="midwestVotes > 0">{{ formatPercentage(college.votes, midwestVotes) }}% of {{ midwestVotes }} total votes</p>
+        </li>
+      </ul>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" integrity="sha256-mpnrJ5DpEZZkwkE1ZgkEQQJW/46CSEh/STrZKOB/qoM=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js" integrity="sha256-pU9euBaEcVl8Gtg+FRYCtin2vKLN8sx5/4npZDmY2VA=" crossorigin="anonymous"></script>
+    <script src="/script.js"></script>
+  </body>
+  <footer>
+    by cloughurd<br>
+    <a href="">github</a>
+  </footer>
+</html>
